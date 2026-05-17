@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aayush Iyengar — Aerospace Engineer</title>
+  <meta name="description" content="Aerospace Engineering portfolio — GNC, trajectory optimization, spacecraft structures, and more." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Literata:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <nav id="nav">
+    <div class="nav-logo">AI</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="menu-link">About</a></li>
+      <li><a href="#projects" class="menu-link">Projects</a></li>
+      <li><a href="#experience" class="menu-link">Experience</a></li>
+      <li><a href="#skills" class="menu-link">Skills</a></li>
+      <li><a href="#contact" class="menu-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ════════════════════════════════ HERO ════════════════════════════════ -->
+  <header id="hero">
+    <div class="hero-bg">
+      <canvas id="orbitCanvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Aerospace Engineer</p>
+      <h1 class="hero-name">Aayush<br/>Iyengar</h1>
+      <p class="hero-tagline">
+        GNC · Trajectory Optimization · Spacecraft Structures<br/>
+        <span class="hero-sub">Purdue '26 · Relativity Space</span>
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="assets/resume.pdf" class="btn-ghost" target="_blank" rel="noopener">
+          <!-- ✏️ UPDATE: replace assets/resume.pdf with your actual resume PDF path -->
+          Resume ↗
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">scroll</div>
+  </header>
+
+  <!-- ════════════════════════════════ ABOUT ════════════════════════════════ -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-label">About</span>
+          <h2>Engineer. Optimizer.<br/>Builder.</h2>
+          <p>
+            <!-- ✏️ UPDATE: Replace this paragraph with your own bio -->
+            I'm an Aerospace Engineering senior at Purdue University (graduating May 2026) with a minor in
+            AI/ML, heading to <strong>Relativity Space</strong> as a full-time engineer in June 2026.
+            My work spans guidance, navigation & control, trajectory optimization, and spacecraft
+            structures — with hands-on experience from two SpaceX internships and a Rocket Lab internship.
+          </p>
+          <p>
+            I'm drawn to the intersection of rigorous first-principles engineering and modern computational
+            methods: convex optimization, model predictive control, and machine learning applied to
+            real flight systems.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Internships<br/>(SpaceX ×2, Rocket Lab)</span>
+            </div>
+            <div class="stat">
+              <!-- ✏️ UPDATE: adjust project count as needed -->
+              <span class="stat-num">8+</span>
+              <span class="stat-label">Engineering<br/>Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">2</span>
+              <span class="stat-label">Technical<br/>Focus Areas</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image-col">
+          <div class="about-photo-frame">
+            <!-- ✏️ UPDATE: Replace 'assets/photo.jpg' with your own headshot -->
+            <img src="assets/photo.jpg" alt="Aayush Iyengar" id="profilePhoto" />
+            <div class="photo-placeholder" id="photoPlaceholder">
+              <span>Add your photo to<br/><code>assets/photo.jpg</code></span>
+            </div>
+          </div>
+          <div class="about-badges">
+            <span class="badge">Purdue AAE '26</span>
+            <span class="badge">AI/ML Minor</span>
+            <span class="badge">AIAA Member</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ PROJECTS ════════════════════════════════ -->
+  <section id="projects">
+    <div class="section-inner">
+      <span class="section-label">Projects</span>
+      <h2>Selected Work</h2>
+      <p class="section-intro">
+        A curated set of technical projects spanning GNC, trajectory optimization, autonomous systems, and structures.
+      </p>
+
+      <div class="projects-grid" id="projectsGrid">
+        <!-- ─── PROJECT CARD TEMPLATE ───
+             To add or edit a project, duplicate one <article class="project-card"> block.
+             Fields to update:
+               data-tags   : space-separated tags shown as pills (e.g. "GNC MPC Python")
+               .proj-tag   : category label shown at top of card
+               h3          : project title
+               .proj-meta  : subtitle / affiliation / date
+               .proj-desc  : 2–4 sentence technical summary
+               .proj-result: key quantitative result or outcome
+               .proj-stack : comma-separated tools/languages used
+               href (×2)   : links to GitHub repo and/or paper/report PDF
+             ─── -->
+
+        <article class="project-card" data-tags="GNC MPC Python Optimization">
+          <div class="proj-header">
+            <span class="proj-tag">GNC · Trajectory Optimization</span>
+            <div class="proj-links">
+              <!-- ✏️ UPDATE: Replace # with your GitHub repo URL -->
+              <a href="#" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+              <!-- ✏️ UPDATE: Replace # with your report/paper PDF link, or remove this <a> tag -->
+              <a href="#" target="_blank" rel="noopener" aria-label="Report">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Europa EDL — MPC &amp; Convex Optimization</h3>
+          <p class="proj-meta">AAE 590 Capstone · Purdue University · Spring 2026</p>
+          <p class="proj-desc">
+            Full Entry, Descent &amp; Landing simulation for a Europa lander. Entry controlled via
+            Pontryagin Maximum Principle bang-bang optimal control; descent &amp; landing via
+            Second-Order Cone Programming (SOCP) with receding-horizon Model Predictive Control
+            and nonlinear RK4 dynamics propagation.
+          </p>
+          <div class="proj-result">
+            <span class="result-label">Key Results</span>
+            Touchdown 409.1 kg @ 2.001 m/s · MPC lateral error 1.68 m · Avg SOCP solve 899 ms
+          </div>
+          <div class="proj-footer">
+            <span class="proj-stack">Python · CVXPY · SciPy · MATLAB</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="NLP ML Python CAD">
+          <div class="proj-header">
+            <span class="proj-tag">ML · NLP · Generative AI</span>
+            <div class="proj-links">
+              <a href="#" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Report">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>CADformer — Natural Language to CAD</h3>
+          <p class="proj-meta">ECE 595 Term Project · Purdue University · Fall 2025</p>
+          <p class="proj-desc">
+            Five-stage NL-to-CadQuery pipeline combining DECINT-style interleaved decomposition with
+            Gorilla-inspired BM25 retrieval-augmented code generation. Benchmarked on CADBench across
+            three difficulty levels against direct-prompting and chain-of-thought baselines.
+          </p>
+          <div class="proj-result">
+            <span class="result-label">Key Result</span>
+            86.1% execution success rate vs. 77.8% (DIRECT) and 69.4% (CoT)
+          </div>
+          <div class="proj-footer">
+            <span class="proj-stack">Python · Azure OpenAI · CadQuery · BM25</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="Structures FEA MATLAB">
+          <div class="proj-header">
+            <span class="proj-tag">Spacecraft Structures</span>
+            <div class="proj-links">
+              <a href="#" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Report">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Europa Lander Structural Sizing</h3>
+          <p class="proj-meta">AAE 590 Capstone · Purdue University · Spring 2026</p>
+          <p class="proj-desc">
+            Structural sizing of Ti-6Al-4V landing legs for a Europa lander. Parametric MATLAB sweep
+            over leg geometry, wall thickness, and taper ratio to minimize mass while satisfying
+            buckling and yield margins per NASA GEVS / Falcon Heavy environments.
+          </p>
+          <div class="proj-result">
+            <span class="result-label">Key Result</span>
+            619.2 N/leg axial load · Positive margins at all critical load cases
+          </div>
+          <div class="proj-footer">
+            <span class="proj-stack">MATLAB · Ti-6Al-4V · NASA GEVS</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="GNC Robotics Python ROS">
+          <div class="proj-header">
+            <span class="proj-tag">Autonomy · Robotics</span>
+            <div class="proj-links">
+              <a href="#" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Voice-Controlled Autonomous Duckiebot</h3>
+          <p class="proj-meta">ECE 595 · Purdue University · Spring 2026</p>
+          <p class="proj-desc">
+            Voice-controlled lane-following robot using Azure STT/TTS, roslibpy over ROS bridge
+            WebSocket, and custom OpenCV lane detection. Implemented real-time motor control with
+            threading safety and TTS feedback-loop prevention.
+          </p>
+          <div class="proj-result">
+            <span class="result-label">Highlight</span>
+            Full voice command pipeline: speech → intent → lane-following control → spoken feedback
+          </div>
+          <div class="proj-footer">
+            <span class="proj-stack">Python · ROS · OpenCV · Azure Cognitive Services</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="Astrodynamics MATLAB Trajectory">
+          <div class="proj-header">
+            <span class="proj-tag">Astrodynamics · Mission Design</span>
+            <div class="proj-links">
+              <a href="#" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+              <a href="#" target="_blank" rel="noopener" aria-label="Report">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Earth-to-Mars Low-Thrust Transfer (LinCov)</h3>
+          <p class="proj-meta">AAE 590 · Stochastic &amp; Optimal Control · Spring 2026</p>
+          <p class="proj-desc">
+            Linear Covariance (LinCov) analysis and Monte Carlo validation of a low-thrust
+            Earth-to-Mars trajectory. Propagated state uncertainty through heliocentric transfer,
+            comparing navigation error growth between LinCov and full nonlinear Monte Carlo.
+          </p>
+          <div class="proj-result">
+            <span class="result-label">Highlight</span>
+            LinCov σ envelopes matched Monte Carlo to within 3% across all trajectory phases
+          </div>
+          <div class="proj-footer">
+            <span class="proj-stack">MATLAB · LinCov · Monte Carlo · STMs</span>
+          </div>
+        </article>
+
+        <!-- ✏️ ADD MORE PROJECT CARDS HERE — copy the <article> block above and fill in your details -->
+
+      </div>
+
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="GNC">GNC</button>
+        <button class="filter-btn" data-filter="Structures">Structures</button>
+        <button class="filter-btn" data-filter="ML">ML / AI</button>
+        <button class="filter-btn" data-filter="Astrodynamics">Astrodynamics</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ EXPERIENCE ════════════════════════════════ -->
+  <section id="experience">
+    <div class="section-inner">
+      <span class="section-label">Experience</span>
+      <h2>Where I've Worked</h2>
+
+      <div class="timeline">
+
+        <!-- ✏️ UPDATE: Replace the content in each .tl-item with your actual role details -->
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3>Launch Fluids Engineer</h3>
+              <span class="tl-company">Relativity Space</span>
+              <span class="tl-date">June 2026 – Present</span>
+            </div>
+            <p class="tl-desc">
+              <!-- ✏️ UPDATE: Add your role description here once you start -->
+              Starting full-time in June 2026. Details coming soon.
+            </p>
+            <div class="tl-tags">
+              <span>Propulsion Systems</span>
+              <span>Launch Operations</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3>Engineering Intern</h3>
+              <!-- ✏️ UPDATE: Change to your actual SpaceX team/title -->
+              <span class="tl-company">SpaceX</span>
+              <span class="tl-date">Summer 2025</span>
+            </div>
+            <p class="tl-desc">
+              <!-- ✏️ UPDATE: Replace with your actual internship description -->
+              [Describe your role, key projects, and impact. What systems did you work on? What did you own end-to-end?]
+            </p>
+            <div class="tl-tags">
+              <span><!-- ✏️ Tag 1 --></span>
+              <span><!-- ✏️ Tag 2 --></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3>Engineering Intern</h3>
+              <span class="tl-company">Rocket Lab</span>
+              <span class="tl-date">Summer 2024</span>
+            </div>
+            <p class="tl-desc">
+              <!-- ✏️ UPDATE: Replace with your actual Rocket Lab internship description -->
+              [Describe your role, key projects, and impact.]
+            </p>
+            <div class="tl-tags">
+              <span><!-- ✏️ Tag 1 --></span>
+              <span><!-- ✏️ Tag 2 --></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3>Engineering Intern</h3>
+              <span class="tl-company">SpaceX</span>
+              <span class="tl-date">Summer 2023</span>
+            </div>
+            <p class="tl-desc">
+              <!-- ✏️ UPDATE: Replace with your actual internship description -->
+              [Describe your role, key projects, and impact.]
+            </p>
+            <div class="tl-tags">
+              <span><!-- ✏️ Tag 1 --></span>
+              <span><!-- ✏️ Tag 2 --></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3>Team Lead — Scope Consulting</h3>
+              <span class="tl-company">Purdue University</span>
+              <span class="tl-date">2024 – 2026</span>
+            </div>
+            <p class="tl-desc">
+              <!-- ✏️ UPDATE: Add your Scope Consulting details -->
+              Managed semester-long client deliverables as team lead. Led cross-functional student teams through end-to-end consulting engagements.
+            </p>
+            <div class="tl-tags">
+              <span>Consulting</span>
+              <span>Team Leadership</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ SKILLS ════════════════════════════════ -->
+  <section id="skills">
+    <div class="section-inner">
+      <span class="section-label">Skills</span>
+      <h2>Technical Toolkit</h2>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>GNC &amp; Dynamics</h4>
+          <ul>
+            <li>Model Predictive Control (MPC)</li>
+            <li>Convex Optimization (SOCP)</li>
+            <li>Pontryagin Maximum Principle</li>
+            <li>Kalman Filtering / LinCov</li>
+            <li>LQR / Pole Placement</li>
+            <li>Attitude Dynamics (MRP, CRP, Euler)</li>
+            <li>Orbital Mechanics &amp; Astrodynamics</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Structures &amp; Analysis</h4>
+          <ul>
+            <li>Finite Element Analysis (ANSYS)</li>
+            <li>Beam Theory &amp; Buckling</li>
+            <li>Margin of Safety Calculations</li>
+            <li>Structural Sizing (parametric)</li>
+            <li>Vibration &amp; Shock Environments</li>
+            <li>NASA GEVS / Launch Load Specs</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Software &amp; Tools</h4>
+          <ul>
+            <li>Python (NumPy, SciPy, CVXPY)</li>
+            <li>MATLAB / Simulink</li>
+            <li>LaTeX (AIAA format)</li>
+            <li>ROS / roslibpy</li>
+            <li>Git / GitHub</li>
+            <li>ANSYS, CAD (SolidWorks)</li>
+            <li>Azure OpenAI / ML APIs</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>ML &amp; AI</h4>
+          <ul>
+            <li>Transformer / LLM Fine-Tuning</li>
+            <li>Retrieval-Augmented Generation</li>
+            <li>Autoencoders &amp; VAEs</li>
+            <li>Reinforcement Learning / MDPs</li>
+            <li>Diffusion Models (theory)</li>
+            <li>PyTorch</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ CONTACT ════════════════════════════════ -->
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <span class="section-label">Contact</span>
+      <h2>Let's Connect</h2>
+      <p class="contact-sub">
+        Open to conversations about GNC, structures, or the future of aerospace.
+      </p>
+      <div class="contact-links">
+        <!-- ✏️ UPDATE: Replace href values with your actual URLs / email -->
+        <a href="mailto:your@email.com" class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          <span>your@email.com</span>
+        </a>
+        <a href="https://linkedin.com/in/yourprofile" class="contact-card" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/yourusername" class="contact-card" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FOOTER ════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Aayush Iyengar</span>
+      <span class="footer-copy">© 2026 · Built with GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
