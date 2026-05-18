@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>In-Air Charging Research — Aayush Iyengar</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Literata:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-logo"><a href="../index.html" style="color:inherit">AI</a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="../index.html#about" class="menu-link">About</a></li>
+      <li><a href="../index.html#projects" class="menu-link">Projects</a></li>
+      <li><a href="../index.html#experience" class="menu-link">Experience</a></li>
+      <li><a href="../index.html#contact" class="menu-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="subpage-hero">
+    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+    <p class="section-label">Published Research · AIAA SciTech 2025</p>
+    <h1 class="subpage-title">In-Air Charging —<br/>AIAA Published Research</h1>
+    <p class="subpage-meta">AIAA SciTech Forum 2025 · doi:10.2514/6.2025-2086</p>
+    <div class="status-badge published">Published · AIAA SciTech 2025</div>
+    <div class="subpage-tags">
+      <span>AIAA</span>
+      <span>In-Air Charging</span>
+      <span>Experimental</span>
+      <span>Systems Analysis</span>
+      <span>Peer-Reviewed</span>
+    </div>
+    <div class="subpage-actions">
+      <a href="https://arc.aiaa.org/doi/10.2514/6.2025-2086" target="_blank" rel="noopener" class="btn-primary">View on AIAA ↗</a>
+    </div>
+  </div>
+
+  <div class="subpage-body">
+
+    <!-- Citation -->
+    <div class="content-section">
+      <h2>Citation</h2>
+      <div class="citation-block">
+        <span class="cite-label">AIAA Reference</span>
+        <p>
+          <!-- ✏️ UPDATE: Replace with the full citation from the AIAA page — author list, title, conference, year, doi -->
+          Choi, Y., et al. "A Mid-Air Charging Mechanisms for Extended Flight Duration <em>AIAA SciTech Forum</em>, 2025.
+          <a href="https://arc.aiaa.org/doi/10.2514/6.2025-2086" target="_blank" rel="noopener">
+            doi:10.2514/6.2025-2086
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Abstract / Overview -->
+    <div class="content-section">
+      <h2>Abstract</h2>
+      <p>
+        <!-- ✏️ UPDATE: Paste the abstract from your paper here, or write a plain-English summary -->
+        This paper introduces a practical approach to sustaining uninterrupted drone operations during extended flight missions 
+        by developing and integrating specialized aerial recharging mechanisms. The proposed solution establishes robust connections 
+        between drones and designated aerial charging stations providing timely charging services during flight. This approach leads 
+        to an in-air charging solution that addresses the critical challenge of limited flight time due to battery capacity constraints. 
+        The integrated charging system comprises three essential components: a charging platform, a magnetic connector, and a landing 
+        gear. To ensure a stable and efficient recharging process during flight, each component is designed to cooperate with each other. 
+        The charging platform provides a secure docking station, the magnetic connector ensures a reliable connection, and the landing 
+        gear aids in precise alignment during the recharging process. Real-flight tests were conducted to demonstrate the effectiveness 
+        of the developed mechanisms, showing their practical applicability in the real environment. Based on the flight test results, 
+        it is shown that the proposed charging mechanism can enable mid-flight charging for battery-powered drones, reducing the need for 
+        frequent ground-based charging.
+      </p>
+    </div>
+
+    <!-- Research Context -->
+    <div class="content-section">
+      <h2>Research Context &amp; My Contributions</h2>
+      <p>
+        <!-- ✏️ UPDATE: Describe your specific role on the research team -->
+        This research was conducted through Purdue University's Automation and Optimization Lab under Professor Ran Dai, with a team of 
+        undergraduate and graduate research assistants from the schools of Aeronautics and Astronautics, Mechanical Engineering, and 
+        Electrical Engineering. The project ran from December 2023 through the paper's publication at AIAA SciTech 2025, with the team 
+        serving as UAV Autonomous Charging Mechanisms Lead. The core technical challenge was enabling a small receiver drone to autonomously 
+        dock onto a larger supplier drone mid-flight for battery recharging — eliminating the need for frequent ground landings that interrupt extended missions.
+      </p>
+      <p>
+        <!-- ✏️ UPDATE -->
+      My contributions spanned both hardware and software. On the hardware side, I helped prototype and 3D-print a battery swap mechanism 
+      enabling mid-air autonomous battery exchange. On the software side, I developed an OpenCV-based vision system to align two drones 
+      for autonomous docking and charging, implemented a Butterworth low-pass filter that eliminated over 99.4% of drone positioning noise 
+      during flight tests, and built a real-time centroid tracking algorithm for large drone positioning relative to the small drone. The 
+      vision pipeline combined color-based detection — isolating red pixels from the receiver drone's painted landing gear — with a contour-based 
+      algorithm using Canny edge detection and Gaussian blurring, with the Butterworth filter applied to x, y, and magnitude distance measurements 
+      across rolling sets of 10 data points to suppress noise from real-time positioning calculations.
+      </p>
+    </div>
+
+    <!-- Key Findings -->
+    <div class="content-section">
+      <h2>Key Findings</h2>
+      <p>
+        <!-- ✏️ UPDATE: Summarize the main results from the paper -->
+        Real-flight testing validated the full mid-air charging cycle: the supplier drone successfully tracked the receiver drone using GPS at range, 
+        transitioned to vision-based tracking within 5 meters for precise alignment, docked autonomously, completed a battery charge, and supported 
+        receiver re-take-off — all without manual intervention. Charging tests at 3C and 5C rates both achieved the target final voltage of 12.6V, 
+        with the 5C rate reaching full charge in 300 seconds versus 700 seconds at 3C, while actually running at lower mean and maximum temperatures 
+        (25.30°C and 25.55°C versus 26.65°C and 28.00°C respectively), demonstrating the system's thermal robustness at higher currents. The primary 
+        challenge identified was receiver drone downwash destabilizing the supplier during close approach, flagged as the key area for future refinement.
+      </p>
+      <div class="results-grid">
+        <!-- ✏️ UPDATE: Replace these with actual results from your paper -->
+        <div class="result-card">
+          <span class="num">—</span>
+          <span class="label">Number: 300 s — Label: Full charge time at 5C rate</span>
+        </div>
+        <div class="result-card">
+          <span class="num">—</span>
+          <span class="label">99.4% — Label: Drone positioning noise eliminated by Butterworth filter</span>
+        </div>
+        <div class="result-card">
+          <span class="num">—</span>
+          <span class="label">5 m — Label: GPS-to-vision handoff range for autonomous docking</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Presentation -->
+   <div class="content-section">
+  <h2>Conference Presentation</h2>
+  <p>
+    The following slides were presented at the Purdue Undergraduate Symposium in Spring 2024, covering
+    the system design, GNC architecture, and experimental flight test results.
+  </p>
+  <div style="width:100%;height:780px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;">
+    <iframe
+      src="../assets/PTR_FinalPresentation_AI.pdf"
+      width="100%"
+      height="100%"
+      style="border:none;"
+    ></iframe>
+  </div>
+  <p style="font-family:var(--mono);font-size:0.75rem;color:var(--text-mute);margin-top:0.6rem;">
+    If the PDF does not render inline, <a href="../assets/PTR_FinalPresentation_AI.pdf" target="_blank" rel="noopener" style="color:var(--amber)">open it directly ↗</a>
+  </p>
+</div>

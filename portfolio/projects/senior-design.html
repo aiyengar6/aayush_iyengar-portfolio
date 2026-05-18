@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Europa Bus Design — Aayush Iyengar</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Literata:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-logo"><a href="../index.html" style="color:inherit">AI</a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="../index.html#about" class="menu-link">About</a></li>
+      <li><a href="../index.html#projects" class="menu-link">Projects</a></li>
+      <li><a href="../index.html#experience" class="menu-link">Experience</a></li>
+      <li><a href="../index.html#contact" class="menu-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="subpage-hero">
+    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+    <p class="section-label">Spacecraft Structures · Mission Design</p>
+    <h1 class="subpage-title">Europa Sample Collection —<br/>Spacecraft Bus Design</h1>
+    <p class="subpage-meta">Senior Design · Purdue University · 2025–2026</p>
+    <div class="status-badge in-progress">In Progress — Modal &amp; Thermal Analysis Underway</div>
+    <div class="subpage-tags">
+      <span>Spacecraft Structures</span>
+      <span>Radiation Hardening</span>
+      <span>CAD</span>
+      <span>Modal Analysis</span>
+      <span>Thermal Analysis</span>
+      <span>SolidWorks</span>
+      <span>ANSYS</span>
+    </div>
+    <div class="subpage-actions">
+      <a href="../assets/Senior_Design_Proposal.pdf" target="_blank" rel="noopener" class="btn-primary">Read Proposal ↗</a>
+    </div>
+  </div>
+
+  <div class="subpage-body">
+
+    <!-- Mission Overview -->
+    <div class="content-section">
+      <h2>Mission Overview</h2>
+      <p>
+        <!-- ✏️ UPDATE: Replace with your own description of the mission context -->
+        TEMPEST is a NASA flagship-class Europa surface mission designed to search for signs of life, assess habitability, and 
+        characterize Europa's internal structure. The mission architecture consists of an orbiter and a lander, launching May 3, 
+        2036 on a VEEGA trajectory (Venus-Earth-Earth-Ganymede-Approach) and arriving at Europa on October 13, 2042 — a total flight 
+        time of approximately 6.45 years. Upon arrival, a four-Ganymede-flyby pump-down tour reduces Jupiter approach velocity from 
+        5.682 km/s to Europa capture, with a total moon tour ΔV of 3.94 km/s. The lander targets a surface lifetime of one month, 
+        with full science data return within the first week post-landing. Total mission budget is capped at $2.8 billion ($3.5 
+        billion with 25% reserves).
+      </p>
+      <p>
+        <!-- ✏️ UPDATE: Add more context about your team, mission requirements, etc. -->
+        My contribution focused on the spacecraft bus structural design for the orbiter and lander, and carrying out all necessary 
+        Entry, Descent and Landing calculations. The lander primary structure is a hexagonal aluminum (Al 2219-T87) frame with a wet
+         mass of 1,253.7 kg and a total volume of 7.544 m³, sized to survive launch loads, Europa descent, and surface operations 
+         within Jupiter's intense radiation environment — a total ionizing dose of up to 510 krad(Si) over 30 days, mitigated through 
+         15mm aluminum vault shielding. I designed and sized the six Ti-6Al-4V landing legs to withstand a touchdown impact load of 
+         619.2 N per leg at 3 m/s vertical velocity, selecting a 25mm outer diameter with 2.5mm wall thickness for buckling and impact 
+         performance, yielding a total leg assembly mass of 2.82 kg. Ongoing work includes modal and thermal analysis of the bus structure 
+         in ANSYS to verify frequency separation requirements and confirm thermal margins across the EDL and surface operations phases.
+      </p>
+    </div>
+
+    <!-- Bus Design -->
+    <div class="content-section">
+      <h2>Structural Bus Design</h2>
+      <p>
+        <!-- ✏️ UPDATE: Describe your CAD/structural design decisions here -->
+        <!--[Describe the bus architecture — dimensions, material choices, primary structure approach,
+        how radiation shielding was integrated, how components were packaged, and what drove the
+        key design decisions. Pull from your proposal document.]-->
+        Bus architecture is still under work (pending driving thermal/structural analyses). Will be updated soon.
+      </p>
+
+      <!-- CAD Images -->
+      <div class="plot-gallery">
+        <div class="plot-frame">
+          <div class="plot-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32" style="color:var(--amber)"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+            <span>Add CAD render to</span>
+            <code>assets/plots/bus_cad_iso.png</code>
+          </div>
+          <div class="plot-caption">Isometric view — spacecraft bus</div>
+        </div>
+        <div class="plot-frame">
+          <div class="plot-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32" style="color:var(--amber)"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+            <span>Add CAD render to</span>
+            <code>assets/plots/bus_cad_exploded.png</code>
+          </div>
+          <div class="plot-caption">Exploded view — primary structure</div>
+        </div>
+      </div>
+      <p style="font-family:var(--mono);font-size:0.75rem;color:var(--text-mute);">
+        To add CAD images: export renders from SolidWorks as PNG and save to
+        <code style="color:var(--amber)">assets/plots/</code>, then replace placeholder divs with
+        <code style="color:var(--amber)">&lt;img src="../assets/plots/filename.png"&gt;</code>.
+      </p>
+    </div>
+
+    <!-- Modal Analysis — placeholder, update when complete -->
+    <div class="content-section">
+      <h2>Modal Analysis <span style="font-family:var(--mono);font-size:0.7rem;font-weight:400;color:var(--amber);letter-spacing:0.08em;margin-left:0.5rem;">IN PROGRESS</span></h2>
+      <p>
+        <!-- ✏️ UPDATE: Fill in once your modal analysis is complete -->
+        Modal analysis is currently underway in ANSYS. This section will present the first
+        several natural frequencies of the bus structure, mode shapes, and compliance with
+        launch environment frequency separation requirements per the launch vehicle ICD.
+      </p>
+      <div class="plot-gallery">
+        <div class="plot-frame">
+          <div class="plot-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32" style="color:var(--amber)"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3z"/><path d="M3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+            <span>Modal analysis results</span>
+            <code>assets/plots/bus_modal_1.png</code>
+            <span>Coming end of May 2026</span>
+          </div>
+          <div class="plot-caption">Mode 1 — [Frequency TBD]</div>
+        </div>
+        <div class="plot-frame">
+          <div class="plot-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32" style="color:var(--amber)"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3z"/><path d="M3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
+            <span>Modal analysis results</span>
+            <code>assets/plots/bus_modal_2.png</code>
+            <span>Coming end of May 2026</span>
+          </div>
+          <div class="plot-caption">Mode 2 — [Frequency TBD]</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thermal Analysis — placeholder -->
+    <div class="content-section">
+      <h2>Thermal Analysis <span style="font-family:var(--mono);font-size:0.7rem;font-weight:400;color:var(--amber);letter-spacing:0.08em;margin-left:0.5rem;">IN PROGRESS</span></h2>
+      <p>
+        <!-- ✏️ UPDATE: Fill in once your thermal analysis is complete -->
+        Thermal analysis is currently underway. This section will cover the thermal environment
+        at Europa (Jupiter proximity, eclipse periods, surface conduction), thermal control
+        architecture, and ANSYS results showing temperature distributions across bus components
+        during critical mission phases.
+      </p>
+      <div class="plot-gallery">
+        <div class="plot-frame">
+          <div class="plot-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32" style="color:var(--amber)"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg>
+            <span>Thermal map</span>
+            <code>assets/plots/bus_thermal.png</code>
+            <span>Coming end of May 2026</span>
+          </div>
+          <div class="plot-caption">Thermal distribution — cruise phase</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Aayush Iyengar</span>
+      <span class="footer-copy">© 2026 · Built with GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

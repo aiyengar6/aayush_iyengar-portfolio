@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CADformer — Aayush Iyengar</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Literata:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-logo"><a href="../index.html" style="color:inherit">AI</a></div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="../index.html#about" class="menu-link">About</a></li>
+      <li><a href="../index.html#projects" class="menu-link">Projects</a></li>
+      <li><a href="../index.html#experience" class="menu-link">Experience</a></li>
+      <li><a href="../index.html#contact" class="menu-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <div class="subpage-hero">
+    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+    <p class="section-label">ML · NLP · Generative AI</p>
+    <h1 class="subpage-title">CADformer —<br/>Natural Language to CAD</h1>
+    <p class="subpage-meta">Text-to-CAD Implementation · Purdue University · Fall 2025</p>
+    <div class="subpage-tags">
+      <span>NLP</span>
+      <span>Retrieval-Augmented Generation</span>
+      <span>BM25</span>
+      <span>CadQuery</span>
+      <span>Azure OpenAI</span>
+      <span>Python</span>
+    </div>
+    <div class="subpage-actions">
+      <a href="../assets/CADformer_Paper.pdf" target="_blank" rel="noopener" class="btn-primary">Read Paper ↗</a>
+      <!-- ✏️ UPDATE: Replace the filename above with the actual name of your paper PDF -->
+    </div>
+  </div>
+
+  <div class="subpage-body">
+
+    <!-- Key Results -->
+    <div class="content-section">
+      <h2>Key Results</h2>
+      <div class="results-grid">
+        <div class="result-card">
+          <span class="num">86.1%</span>
+          <span class="label">CADformer ESR</span>
+        </div>
+        <div class="result-card">
+          <span class="num">77.8%</span>
+          <span class="label">Direct Baseline ESR</span>
+        </div>
+        <div class="result-card">
+          <span class="num">69.4%</span>
+          <span class="label">Chain-of-Thought ESR</span>
+        </div>
+        <div class="result-card">
+          <span class="num">5-Stage</span>
+          <span class="label">Pipeline Architecture</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <div class="content-section">
+      <h2>Project Overview</h2>
+      <p>
+        <!-- ✏️ UPDATE: Replace with your own summary -->
+        CADformer addresses a fundamental gap in LLM-based program synthesis: while large language 
+        models have become capable at generating general executable code, they struggle with CAD 
+        geometry creation, which demands more than just runnable output. An input like "create a 
+        hollow beam with a certain wall thickness and bolt pattern" requires splitting into discrete 
+        modeling decisions — creating solid shapes, removing material, placing repeated features — 
+        where mistakes don't cause runtime errors but instead produce geometrically incorrect shapes 
+        that execute without complaint. Existing approaches like direct generation and chain-of-thought 
+        prompting treat the full request as a single generation task, leaving the model to track complex 
+        spatial relationships and dimensional dependencies without any structural grounding.
+      </p>
+      <p>
+        CADformer combines ideas from three complementary NLP papers — Toolformer, DECINT, and Gorilla — 
+        into a single five-stage pipeline purpose-built for the CAD domain. From DECINT, it borrows 
+        interleaved decomposition: rather than planning in natural language and generating code only at 
+        the end (as chain-of-thought does), CADformer generates one natural-language sub-step and its 
+        corresponding code fragment together, so each future step is grounded in the actual current 
+        program state rather than a textual description of it. From Gorilla, it borrows retrieval-augmented 
+        generation: for each sub-step, a BM25 index retrieves the most relevant CadQuery API documentation 
+        from a library of 34 elementary operations, grounding code generation in valid syntax and preventing 
+        the hallucinated selector strings and invalid argument combinations that plague direct generation approaches.
+      </p>
+    </div>
+
+    <!-- Pipeline Architecture -->
+    <div class="content-section">
+      <h2>Pipeline Architecture</h2>
+      <div class="phases">
+        <div class="phase-card">
+          <h3>Stage 1/2 — Preprocessing & Normalization</h3>
+          <p>
+            <!-- ✏️ UPDATE: Describe your intent parsing stage -->
+            The input natural-language CAD request is preprocessed by normalizing units and resolving any missing or 
+            implied dimensions before any decomposition or code generation begins. This step ensures that ambiguous 
+            or incomplete geometric specifications — such as an unspecified wall thickness or an implied symmetry — 
+            are made explicit before they propagate into downstream modeling steps where a wrong assumption would 
+            cascade through the entire program.
+          </p>
+        </div>
+        <div class="phase-card">
+          <h3>Stage 3 — BM25 Retrieval</h3>
+          <p>
+            <!-- ✏️ UPDATE -->
+            For each decomposed sub-step, CADformer retrieves the top three most relevant elementary operations from a 
+            hand-curated library of 34 CadQuery operations using BM25 keyword search. The library covers five categories 
+            — primitive creation, boolean operations, transforms, feature operations, and pattern operations — with each 
+            entry containing the operation name, function signature, natural-language description, allowable constraints, 
+            and a worked example. The retrieved documentation is injected directly into the code generation prompt in the 
+            style of Gorilla's retrieval-aware generation, grounding each step in valid CadQuery syntax. This retrieval 
+            step proved to be the single largest performance driver in the system: removing it (CADformer-NoRetr) dropped 
+            execution success rate from 86.1% to 52.8%, a 33.3 percentage point gap that actually exceeded Gorilla's reported 
+            12–23% hallucination reduction from retrieval — suggesting that CadQuery's selector syntax and operation chaining 
+            are harder for a model to recall from memory than standard ML API names.
+          </p>
+        </div>
+        <div class="phase-card">
+          <h3>Stage 4 — Code Generation</h3>
+          <p>
+            <!-- ✏️ UPDATE -->
+            For each sub-step, the code generation model receives the original full request, all prior natural-language sub-steps, 
+            all prior generated code fragments, and the three retrieved CadQuery documentation entries. GPT-4 via the Azure OpenAI 
+            API serves as the underlying model for both decomposition and code generation. A key addition specific to the CAD domain 
+            is a continuously updated context summary injected into each prompt, listing every variable created so far alongside its 
+            inferred geometric type — solid, face, edge, or wire. This directly addresses a common failure mode in NL-to-CAD generation 
+            where a model applies an operation to the wrong geometric object type, a class of error that produces no runtime exception 
+            but yields incorrect geometry. Intermediate steps use explicit named references (s1, s2, etc.) so later steps can refer to 
+            prior geometry unambiguously, such as "the top face of the box from s1."
+          </p>
+        </div>
+        <div class="phase-card">
+          <h3>Stage 5 — Execution &amp; Validation</h3>
+          <p>
+            <!-- ✏️ UPDATE -->
+            Once all sub-steps have generated code fragments, the pieces are assembled into a full CadQuery Python script and executed. 
+            The system records whether execution succeeds or fails, and surfaces warnings and errors at the step level so failures can 
+            be traced to their origin sub-step rather than the assembled program as a whole. Failure analysis across the benchmark revealed 
+            three dominant failure modes: invalid selector syntax where the model generates selectors like "|Z and >Z'" that are syntactically 
+            plausible but violate CadQuery's selector grammar (analogous to the API hallucination problem Gorilla addresses); ordering violations 
+            where a geometrically correct operation is placed before a prerequisite boolean operation has created the relevant geometry; and output
+             formatting errors in the non-CADformer baselines where the model wraps generated code in markdown fences, causing immediate parse 
+             failures. Execution Success Rate (ESR) — whether the assembled program runs without error — was the primary evaluation metric across 
+             all four methods tested on CADBench, a 36-prompt benchmark spanning three difficulty tiers.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Presentation -->
+    <div class="content-section">
+      <h2>Class Presentation</h2>
+      <p>
+        The following slides were presented to summarize the work of this project, covering the pipeline
+        architecture, benchmark methodology, and key results.
+      </p>
+      <div style="width:100%;height:780px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;">
+        <iframe
+          src="../assets/term_paper_pres-Aayush Iyengar.pdf"
+          width="100%"
+          height="100%"
+          style="border:none;"
+        ></iframe>
+      </div>
+      <p style="font-family:var(--mono);font-size:0.75rem;color:var(--text-mute);margin-top:0.6rem;">
+        If the PDF does not render inline, <a href="../assets/term_paper_pres-Aayush Iyengar.pdf" target="_blank" rel="noopener" style="color:var(--amber)">open it directly ↗</a>
+      </p>
+    </div>
+    
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Aayush Iyengar</span>
+      <span class="footer-copy">© 2026 · Built with GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
