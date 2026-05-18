@@ -12,7 +12,8 @@
 <body>
 
   <nav id="nav">
-    <div class="nav-logo">AI</div>
+    <!--<div class="nav-logo">AI</div>
+  -->
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -55,11 +56,19 @@
   <section id="about">
     <div class="section-inner">
       <div class="about-grid">
+        <div class="about-image-col">
+          <div class="about-photo-frame">
+            <img src="assets/newHeadshot.jpg" alt="Aayush Iyengar" id="profilePhoto" />
+            <div class="photo-placeholder" id="photoPlaceholder">
+              <span>Add your photo to<br/><code>assets/newHeadshot.jpg</code></span>
+            </div>
+          </div>
+          
+        </div>
         <div class="about-text">
           <span class="section-label">About</span>
           <h2>Aerospace Engineer</h2>
-          <p>
-            I'm an Aerospace Engineering graduate from Purdue University with a minor in AI/ML,
+          <p>I'm an Aerospace Engineering graduate from Purdue University with a minor in AI/ML,
             working at <strong>Relativity Space</strong> as a full-time Launch Fluids engineer.
             I've spent the last two years getting my hands on flight hardware across launch vehicle
             and spacecraft programs at SpaceX and Rocket Lab, working on various propellant systems,
@@ -67,12 +76,10 @@
             testing and delivery. My past work has spanned guidance, navigation &amp; control,
             trajectory optimization, spacecraft structures, and launch fluids system design.
           </p>
-          <p>
-            I'm drawn to the intersection of rigorous first-principles engineering and modern
+          <p>I'm drawn to the intersection of rigorous first-principles engineering and modern
             computational methods, and outside of work am very interested in the intersection of
-            autonomy and aerospace hardware — from drone docking mechanisms to interplanetary
-            entry, descent, and landing systems.
-          </p>
+            autonomy and aerospace hardware — from drone docking mechanisms to large scale propellent feed systems to interplanetary
+            entry, descent, and landing systems.</p>
           <div class="about-stats">
             <div class="stat">
               <span class="stat-num">3</span>
@@ -86,19 +93,6 @@
               <span class="stat-num">2</span>
               <span class="stat-label">Technical<br/>Focus Areas</span>
             </div>
-          </div>
-        </div>
-        <div class="about-image-col">
-          <div class="about-photo-frame">
-            <img src="assets/newHeadshot.jpg" alt="Aayush Iyengar" id="profilePhoto" />
-            <div class="photo-placeholder" id="photoPlaceholder">
-              <span>Add your photo to<br/><code>assets/newHeadshot.jpg</code></span>
-            </div>
-          </div>
-          <div class="about-badges">
-            <span class="badge">Purdue AAE '26</span>
-            <span class="badge">AI/ML Minor</span>
-            <span class="badge">Relativity Space</span>
           </div>
         </div>
       </div>
@@ -136,8 +130,7 @@
               </a>
             </div>
           </div>
-          <h3>Europa EDL — MPC &amp; Convex Optimization</h3>
-          <p class="proj-meta">AAE 590 Capstone · Purdue University · Spring 2026</p>
+          <h3>Europa Entry, Descent &amp; Landing — MPC &amp; Convex Optimization</h3>
           <p class="proj-desc">
             Full Entry, Descent &amp; Landing simulation for a Europa lander. Entry controlled via
             Pontryagin Maximum Principle bang-bang optimal control; descent &amp; landing via
@@ -146,10 +139,11 @@
           </p>
           <div class="proj-result">
             <span class="result-label">Key Results</span>
-            Touchdown 409.1 kg @ 2.001 m/s · MPC lateral error 1.68 m · Avg SOCP solve 899 ms
+            Solved and simultaed optimal descent profile, with nonlinear dynamics, and quantified the difference from a linearized system with MPC.
           </div>
           <div class="proj-footer">
             <span class="proj-stack">Python · CVXPY · SciPy · MATLAB</span>
+            <!-- <br> -->
             <a href="projects/europa-edl.html" class="proj-detail-link">View Project →</a>
           </div>
         </article>
@@ -164,18 +158,20 @@
             </div>
           </div>
           <h3>Europa Sample Collection — Spacecraft Bus Design</h3>
-          <p class="proj-meta">Senior Design · Purdue University · 2025–2026</p>
           <p class="proj-desc">
             Designed a radiation-hardened spacecraft bus for Europa surface sample collection.
             Work encompasses full structural bus design in CAD, with modal and thermal analysis
-            underway.
+            underway. Responsible for the entire optimized Entry, Descent, and Landing profile to
+            reach the target landing site, maintaining functionality of the lander from a delivered 
+            orbit around Europa.
           </p>
           <div class="proj-result">
             <span class="result-label">Scope</span>
             Radiation-hardened bus · CAD · Modal &amp; Thermal Analysis (in progress)
           </div>
           <div class="proj-footer">
-            <span class="proj-stack">SolidWorks · ANSYS · Systems Engineering</span>
+            <span class="proj-stack">NX · ANSYS · Systems Engineering · GNC</span>
+            <!-- <br> -->
             <a href="projects/senior-design.html" class="proj-detail-link">View Project →</a>
           </div>
         </article>
@@ -190,25 +186,25 @@
             </div>
           </div>
           <h3>CADformer — Natural Language to CAD</h3>
-          <p class="proj-meta">ECE 595 Term Project · Purdue University · Fall 2025</p>
           <p class="proj-desc">
-            Five-stage NL-to-CadQuery pipeline combining DECINT-style interleaved decomposition
+            I project I created to take input text and turn it into CAD stl files. This project involves a Five-stage natural language-to-Cad model pipeline combining DECINT-style interleaved decomposition
             with Gorilla-inspired BM25 retrieval-augmented code generation. Benchmarked on
-            CADBench across three difficulty levels against direct-prompting and CoT baselines.
+            on AI generated input design phrases across three difficulty levels against direct-prompting and Chain-of-thought baselines.
           </p>
           <div class="proj-result">
             <span class="result-label">Key Result</span>
             86.1% execution success rate vs. 77.8% (DIRECT) and 69.4% (CoT)
           </div>
           <div class="proj-footer">
-            <span class="proj-stack">Python · Azure OpenAI · CadQuery · BM25</span>
+            <span class="proj-stack">Python · Azure OpenAI · NLP</span>
+            <!-- <br> -->
             <a href="projects/cadformer.html" class="proj-detail-link">View Project →</a>
           </div>
         </article>
 
         <article class="project-card" data-tags="Research ML">
           <div class="proj-header">
-            <span class="proj-tag">Published Research · AIAA</span>
+            <span class="proj-tag">Published Research · Structures</span>
             <div class="proj-links">
               <a href="https://arc.aiaa.org/doi/10.2514/6.2025-2086" target="_blank" rel="noopener" aria-label="DOI">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -216,10 +212,10 @@
             </div>
           </div>
           <h3>In-Air Charging — AIAA Published Research</h3>
-          <p class="proj-meta">AIAA SciTech 2025 · doi:10.2514/6.2025-2086</p>
           <p class="proj-desc">
-            Published research on in-air charging systems — system design, analysis, and
-            experimental validation, with results presented at the AIAA SciTech Forum 2025.
+            Published research on in-air charging systems including the overall system design, analysis, and
+            experimental validation, with results presented at the AIAA SciTech Forum 2025. I was mostly responsible for 
+            the landing platform design, and image processing, with more details specified on the project page.
           </p>
           <div class="proj-result">
             <span class="result-label">Published</span>
@@ -227,6 +223,7 @@
           </div>
           <div class="proj-footer">
             <span class="proj-stack">AIAA · Experimental · Systems Analysis</span>
+            <!-- <br> -->
             <a href="projects/research.html" class="proj-detail-link">View Project →</a>
           </div>
         </article>
@@ -236,10 +233,10 @@
             <span class="proj-tag">Industry Experience</span>
           </div>
           <h3>Internship Work — SpaceX &amp; Rocket Lab</h3>
-          <p class="proj-meta">SpaceX (×2) · Rocket Lab · 2023–2025</p>
+          
           <p class="proj-desc">
             A curated showcase of hardware and systems work across two SpaceX internships and
-            one Rocket Lab internship — propellant systems, structural components, and mechanical
+            one Rocket Lab internship including work on propellant systems, structural components, and mechanical
             mechanisms from concept through test and delivery.
           </p>
           <div class="proj-result">
@@ -247,7 +244,8 @@
             SpaceX · Rocket Lab · Flight-proven hardware programs
           </div>
           <div class="proj-footer">
-            <span class="proj-stack">Flight Hardware · Propulsion · Structures · Mechanisms</span>
+            <span class="proj-stack"> Fluid Systems · Structures · Mechanisms</span>
+            <!-- <br> -->
             <a href="projects/internships.html" class="proj-detail-link">View Showcase →</a>
           </div>
         </article>
@@ -352,7 +350,7 @@
               Butterworth filter that successfully eliminated over 99.4% of drone positioning noise during live flight testing. My work culminated 
               in a published technical paper presented at the prestigious AIAA SciTech forum, successfully demonstrating a highly robust, noise-filtered 
               tracking framework that significantly advances the feasibility of autonomous aerial docking and continuous UAV fleet operations.</p>
-            <div class="tl-tags"><span>Consulting</span><span>Team Leadership</span></div>
+            <div class="tl-tags"><span>Analysis and Simulation</span><span>Team Leadership</span></div>
           </div>
         </div>
 
