@@ -36,7 +36,7 @@ cd <repo-name>
 
 # Open locally — no server needed
 open index.html          # macOS
-start index.html         # Windows
+right click the index.html file and then press 'open with live server', then itll open on the side and be able to see visual changes
 xdg-open index.html      # Linux
 ```
 
