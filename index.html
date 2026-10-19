@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aayush Iyengar — Aerospace Engineer</title>
+  <meta name="description" content="Aerospace Engineering portfolio — GNC, trajectory optimization, spacecraft structures, and more." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Literata:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav id="nav">
+    <!--<div class="nav-logo">AI</div>
+  -->
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="menu-link">About</a></li>
+      <li><a href="#projects" class="menu-link">Projects</a></li>
+      <li><a href="#experience" class="menu-link">Experience</a></li>
+      <li><a href="#skills" class="menu-link">Skills</a></li>
+      <li><a href="#contact" class="menu-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <header id="hero">
+    <div class="hero-bg"><canvas id="orbitCanvas"></canvas></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Aerospace Engineer</p>
+      <h1 class="hero-name">Aayush<br/>Iyengar</h1>
+      <p class="hero-tagline">
+        GNC · Trajectory Optimization · Spacecraft Structures · Launch Fluids<br/>
+        <span class="hero-sub">Rocket Lab · Purdue '26 </span>
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="assets/Iyengar, Aayush Resume.pdf" class="btn-ghost" target="_blank" rel="noopener">Resume ↗</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">scroll</div>
+  </header>
+
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-image-col">
+          <div class="about-photo-frame">
+            <img src="assets/newHeadshot.jpg" alt="Aayush Iyengar" id="profilePhoto" />
+            <div class="photo-placeholder" id="photoPlaceholder">
+              <span>Add your photo to<br/><code>assets/newHeadshot.jpg</code></span>
+            </div>
+          </div>
+          
+        </div>
+        <div class="about-text">
+          <span class="section-label">About</span>
+          <h2>Aerospace Engineer</h2>
+          <p>I'm an Aerospace Engineering graduate from Purdue University with a minor in AI/ML,
+            working at <strong>Rocket Lab</strong> as a full-time Spacecraft Mechanical engineer.
+            I've spent the last two years getting my hands on flight hardware across launch vehicle
+            and spacecraft programs at SpaceX and Rocket Lab, working on various propellant systems,
+            structural components, and mechanical mechanisms all the way from concept through hardware
+            testing and delivery. My past work has spanned guidance, navigation &amp; control,
+            trajectory optimization, spacecraft structures, and launch fluids system design.
+          </p>
+          <p>I'm drawn to the intersection of rigorous first-principles engineering and modern
+            computational methods, and outside of work am very interested in the intersection of
+            autonomy and aerospace hardware — from drone docking mechanisms to large scale propellent feed systems to interplanetary
+            entry, descent, and landing systems.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Internships<br/>(SpaceX ×2, Rocket Lab)</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">8+</span>
+              <span class="stat-label">Engineering<br/>Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">2</span>
+              <span class="stat-label">Technical<br/>Focus Areas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-inner">
+      <span class="section-label">Projects</span>
+      <h2>Selected Work</h2>
+      <p class="section-intro">
+        A curated set of technical projects spanning Mechanical Design, GNC, trajectory optimization, autonomous systems, structures, and fluids design.
+      </p>
+
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="GNC">GNC</button>
+        <button class="filter-btn" data-filter="Structures">Structures</button>
+        <button class="filter-btn" data-filter="ML">ML / AI</button>
+        <button class="filter-btn" data-filter="Astrodynamics">Astrodynamics</button>
+        <button class="filter-btn" data-filter="Research">Research</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <article class="project-card" data-tags="GNC MPC Python Optimization">
+          <div class="proj-header">
+            <span class="proj-tag">GNC · Trajectory Optimization</span>
+            <div class="proj-links">
+              <a href="https://github.com/aiyengar6" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+              <a href="assets/AAE_590_Project_Report_AI_OW.pdf" target="_blank" rel="noopener" aria-label="Report">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Europa Entry, Descent &amp; Landing — MPC &amp; Convex Optimization</h3>
+          <p class="proj-desc">
+            Full Entry, Descent &amp; Landing simulation for a Europa lander. Entry controlled via
+            Pontryagin Maximum Principle bang-bang optimal control; descent &amp; landing via
+            Second-Order Cone Programming (SOCP) with receding-horizon MPC and nonlinear RK4
+            dynamics propagation.
+          </p>
+          <div class="proj-result">
+            <span class="result-label">Key Results</span>
+            Solved and simultaed optimal descent profile, with nonlinear dynamics, and quantified the difference from a linearized system with MPC.
+          </div>
+          <div class="proj-footer">
+            <span class="proj-stack">Python · CVXPY · SciPy · MATLAB</span>
+            <!-- <br> -->
+            <a href="projects/europa-edl.html" class="proj-detail-link">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="Structures Astrodynamics">
+          <div class="proj-header">
+            <span class="proj-tag">Spacecraft Structures · Mission Design</span>
+            <div class="proj-links">
+              <a href="assets/Senior_Design_Proposal.pdf" target="_blank" rel="noopener" aria-label="Report">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>Europa Sample Collection — Spacecraft Bus Design</h3>
+          <p class="proj-desc">
+            Designed a radiation-hardened spacecraft bus for Europa surface sample collection.
+            Work encompasses full structural bus design in CAD, with modal and thermal analysis
+            underway. Responsible for the entire optimized Entry, Descent, and Landing profile to
+            reach the target landing site, maintaining functionality of the lander from a delivered 
+            orbit around Europa.
+          </p>
+          <div class="proj-result">
+            <span class="result-label">Scope</span>
+            Radiation-hardened bus · CAD · Modal &amp; Thermal Analysis (in progress)
+          </div>
+          <div class="proj-footer">
+            <span class="proj-stack">NX · ANSYS · Systems Engineering · GNC</span>
+            <!-- <br> -->
+            <a href="projects/senior-design.html" class="proj-detail-link">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="NLP ML Python CAD">
+          <div class="proj-header">
+            <span class="proj-tag">ML · NLP · Generative AI</span>
+            <div class="proj-links">
+              <a href="assets/CADformer_Paper.pdf" target="_blank" rel="noopener" aria-label="Report">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>CADformer — Natural Language to CAD</h3>
+          <p class="proj-desc">
+            A project designed to take input text and turn it into CAD stl files. This project involves a Five-stage natural language-to-Cad model pipeline combining DECINT-style interleaved decomposition
+            with Gorilla-inspired BM25 retrieval-augmented code generation. Benchmarked on
+            on AI generated input design phrases across three difficulty levels against direct-prompting and Chain-of-thought baselines.
+          </p>
+          <div class="proj-result">
+            <span class="result-label">Key Result</span>
+            86.1% execution success rate vs. 77.8% (DIRECT) and 69.4% (CoT)
+          </div>
+          <div class="proj-footer">
+            <span class="proj-stack">Python · Azure OpenAI · NLP</span>
+            <!-- <br> -->
+            <a href="projects/cadformer.html" class="proj-detail-link">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="Research ML">
+          <div class="proj-header">
+            <span class="proj-tag">Published Research · Structures</span>
+            <div class="proj-links">
+              <a href="https://arc.aiaa.org/doi/10.2514/6.2025-2086" target="_blank" rel="noopener" aria-label="DOI">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3>In-Air Charging — AIAA Published Research</h3>
+          <p class="proj-desc">
+            Published research on in-air charging systems including the overall system design, analysis, and
+            experimental validation, with results presented at the AIAA SciTech Forum 2025. I was mostly responsible for 
+            the landing platform design, and image processing, with more details specified on the project page.
+          </p>
+          <div class="proj-result">
+            <span class="result-label">Published</span>
+            AIAA SciTech Forum 2025 · Peer-reviewed conference paper
+          </div>
+          <div class="proj-footer">
+            <span class="proj-stack">AIAA · Experimental · Systems Analysis</span>
+            <!-- <br> -->
+            <a href="projects/research.html" class="proj-detail-link">View Project →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="Structures GNC">
+          <div class="proj-header">
+            <span class="proj-tag">Industry Experience</span>
+          </div>
+          <h3>Internship Work — SpaceX &amp; Rocket Lab</h3>
+          
+          <p class="proj-desc">
+            A curated showcase of hardware and systems work across two SpaceX internships and
+            one Rocket Lab internship including work on propellant systems, structural components, and mechanical
+            mechanisms from concept through test and delivery.
+          </p>
+          <div class="proj-result">
+            <span class="result-label">Companies</span>
+            SpaceX · Rocket Lab · Flight-proven hardware programs
+          </div>
+          <div class="proj-footer">
+            <span class="proj-stack"> Fluid Systems · Structures · Mechanisms</span>
+            <!-- <br> -->
+            <a href="projects/internships.html" class="proj-detail-link">View Showcase →</a>
+          </div>
+        </article>
+
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-inner">
+      <span class="section-label">Experience</span>
+      <h2>Where I've Worked</h2>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3>Spacecraft Mechanical Engineer</h3>
+              <span class="tl-company">Rocket Lab</span>
+              <span class="tl-date">June 2026 – Present</span>
+            </div>
+            <p class="tl-desc">Responsible Engineer for several mechanical systems across science and defense missions, including 
+              solor array, radio, and vehicle primary and secondary structure design. 
+            </p>
+            <div class="tl-tags"><span>Structures Design & Analysis</span><span>Mechanical Design</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3>Stage 0 Propellent Systems Engineering Intern</h3>
+              <span class="tl-company">SpaceX</span>
+              <span class="tl-date">Summer 2025</span>
+            </div>
+            <p class="tl-desc"><!-- ✏️ UPDATE -->During the summer of 2025, I was tasked with several projects. 
+              I owned the rebuild, and activation of the static fire stand water system, including outlineing a 
+              GN2 blowdown test to proof all newly designed/installed fluids hardware and instrumentation. I 
+              designed and installed the Orbital Pad 2 flame diverter structural shielding, performing static
+               structural and thermal analysis of a V3 Booster's launch pressure and thermal loads to minimize 
+               overpressure effects on the deflector fluid system. Finally I planned a change to the current 
+               commodity offload stations, designing 19 new LOX/LN2/LCH4 stations to deliver cryogenic propellent
+                into the storage tanks across the pad, decreasing offload time by 15% throughout the pad.</p>
+            <div class="tl-tags"><span>Fluid Systems</span><span>Structures Design & Analysis</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3>Spacecraft Mechanical Engineering Intern</h3>
+              <span class="tl-company">Rocket Lab</span>
+              <span class="tl-date">Spring 2025</span>
+            </div>
+            <p class="tl-desc"><!-- ✏️ UPDATE -->During the spring of 2025 at Rocket Lab, I took ownership of a single project from 
+              requirements derivation through build and testing. I conceptualized, built, and tested a dynamic solar array gravity offloading
+              system to test the deployment of a new, linear deployment architecture. I derived and sized the offloader assembly to numerous loads, 
+              ranging from the primary frame stability during deployment, the static loads within the suspension assembly holding the deployment mechanism, 
+              and the overall system energy losses from the selected bearings during deployment. I worked with the Responsible Engineer of the solar array to make sure performance
+              was being characterized properly, and even helped optimize mass, volume, and energy constraints to determine the ideal layout of Si & GaAs
+              cells for a 5-kW solar array. 
+            </p>
+            <div class="tl-tags"><span>Structures Design & Analysis</span><span>Research & Design</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3>Launch Engineering Intern</h3>
+              <span class="tl-company">SpaceX</span>
+              <span class="tl-date">Summer 2024</span>
+            </div>
+            <p class="tl-desc"><!-- ✏️ UPDATE -->During my time as a Starship Launch Engineering Intern at SpaceX, I drove high-impact 
+              structural and fluid system optimizations for critical launch pad architecture. I owned the redesign of the GCH4 pump supply
+               and venting infrastructure, scaling piping from 4" to 6" to minimize boil-off losses and facilitate complex tank demolition, 
+               while utilizing CAESAR II to perform meticulous stress analysis and optimize pipe routing from LCH4 pumps to the heat exchanger 
+               skid. Additionally, I spearheaded the end-to-end modeling, manufacturing, and installation of blast protection systems that 
+               completely mitigated vehicle plume damage for seven system-critical vent valves, and engineered an improved flame deflector cover 
+               that reduced technician installation time by over 5 minutes per use. Through these projects, I successfully enhanced system fluid 
+               efficiency, safeguarded essential launch infrastructure against extreme dynamic plume loads, and streamlined pad operational efficiency.</p>
+            <div class="tl-tags"><span>Fluid Systems</span><span>Structures Design & Analysis</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-marker"></div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <h3>Undergraduate Researcher</h3>
+              <span class="tl-company">Purdue University</span>
+              <span class="tl-date">2023 – 2025</span>
+            </div>
+            <p class="tl-desc">While working on autonomous charging mechanisms in the Automation and Optimization Lab, I spearheaded the 
+              development of cutting-edge hardware and software systems to enable fully autonomous, mid-air drone interactions. I helped lead 
+              the end-to-end design, prototyping, and 3D printing of a specialized battery swap mechanism for autonomous mid-air exchanges, 
+              alongside developing a computer-vision-driven in-air charging platform. To achieve the extreme precision required for docking, 
+              I helped to develop a real-time centroid tracking algorithm utilizing OpenCV to align multiple aircraft and engineered an automated 
+              Butterworth filter that successfully eliminated over 99.4% of drone positioning noise during live flight testing. My work culminated 
+              in a published technical paper presented at the prestigious AIAA SciTech forum, successfully demonstrating a highly robust, noise-filtered 
+              tracking framework that significantly advances the feasibility of autonomous aerial docking and continuous UAV fleet operations.</p>
+            <div class="tl-tags"><span>Analysis and Simulation</span><span>Team Leadership</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-inner">
+      <span class="section-label">Skills</span>
+      <h2>Technical Toolkit</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>GNC &amp; Dynamics</h4>
+          <ul>
+            <li>Model Predictive Control (MPC)</li>
+            <li>Convex Optimization</li>
+            <li>Pontryagin Maximum Principle</li>
+            <li>LQR / Pole Placement</li>
+            <li>Attitude Dynamics (MRP, CRP, Quaternions)</li>
+            <li>Orbital Mechanics &amp; Astrodynamics</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Structures &amp; Analysis</h4>
+          <ul>
+            <li>Finite Element Analysis (ANSYS)</li>
+            <li>Pipe Stress Analysis (CAESAR II)</li>
+            <li>Beam Theory &amp; Buckling</li>
+            <li>Structural Sizing</li>
+            <li>Vibration &amp; Shock Environments</li>
+            <li>NASA GEVS / Launch Load Specs</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Software &amp; Tools</h4>
+          <ul>
+            <li>Python</li>
+            <li>MATLAB / Simulink</li>
+            <li>ANSYS · NX · Teamcenter</li>
+            <li>LaTeX </li>
+            <li>C</li>
+            <li>ROS / roslibpy</li>
+            <li>Git / GitHub</li>
+            <li>Azure OpenAI / ML APIs</li>
+          </ul>
+        </div>
+        <!--
+        <div class="skill-group">
+          <h4>ML &amp; AI</h4>
+          <ul>
+            <li>Transformer / LLM Fine-Tuning</li>
+            <li>Retrieval-Augmented Generation</li>
+            <li>Autoencoders &amp; VAEs</li>
+            <li>Reinforcement Learning / MDPs</li>
+            <li>Diffusion Models (theory)</li>
+            <li>PyTorch</li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <span class="section-label">Contact</span>
+      <h2>Let's Connect</h2>
+      <p class="contact-sub">Open to conversations about GNC, structures, or the future of aerospace.</p>
+      <div class="contact-links">
+        <a href="mailto:aayushiyengar2021@gmail.com" class="contact-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          <span>aayushiyengar2021@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/aayush-iyengar/" class="contact-card" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/aiyengar6" class="contact-card" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Aayush Iyengar</span>
+      <span class="footer-copy">© 2026 · Built with GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
