@@ -2,7 +2,7 @@
 
 A dark, aerospace-industrial portfolio website built for GitHub Pages. Zero dependencies, zero build step — pure HTML, CSS, and JavaScript.
 
-**Live URL after publishing:** `https://<your-github-username>.github.io/<repo-name>/`
+**Live URL after publishing:** `https://aiyengar6.github.io/aayush_iyengar-portfolio/`
 
 ---
 
